@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+      
+  <h:head>
+    <title>Hello World</title>
+  </h:head>
+        
+  <h:body>
+  
+    <h:form id="myForm">
+  
+      <h:panelGroup id="updateMe">
+      
+        <p:pickList value="#{pickListBean.model}" var="item" itemLabel="#{item}" itemValue="#{item}"/>
+        
+        <br/>
+        
+        #{pickListBean.currentDate}
+      
+      </h:panelGroup>
+      
+      <br/>
+        
+      <p:commandButton value="press me" update="updateMe" onerror="alert(status);" />
+
+    </h:form>
+  
+  </h:body>
+
+</html>
