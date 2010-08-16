@@ -24,28 +24,85 @@
     </plugins>
   </build>
   
+  <profiles>
+
+    <profile>
+      <id>myfaces</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.myfaces.core</groupId>
+          <artifactId>myfaces-api</artifactId>
+          <version>2.0.1</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.myfaces.core</groupId>
+          <artifactId>myfaces-impl</artifactId>
+          <version>2.0.1</version>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>jsfri</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>com.sun.faces</groupId>
+          <artifactId>jsf-api</artifactId>
+          <version>2.0.3</version>
+        </dependency>
+        <dependency>
+          <groupId>com.sun.faces</groupId>
+          <artifactId>jsf-impl</artifactId>
+          <version>2.0.3</version>
+        </dependency>
+      </dependencies>
+    </profile>
+
+  </profiles>
+  
   <!-- Dependencies -->
   <dependencies>
-  
-    <!-- JSF 2.0  -->
-    <dependency>
-      <groupId>org.apache.myfaces.core</groupId>
-      <artifactId>myfaces-api</artifactId>
-      <version>2.0.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.myfaces.core</groupId>
-      <artifactId>myfaces-impl</artifactId>
-      <version>2.0.1</version>
-    </dependency>
     
     <dependency>
       <groupId>org.primefaces</groupId>
       <artifactId>primefaces</artifactId>
-<!--      <version>2.1</version>-->
-      <version>2.2.RC1-SNAPSHOT</version>
+      <version>2.1</version>
+<!--      <version>2.2.RC1-SNAPSHOT</version>-->
     </dependency>    
     
   </dependencies>
+
+  <repositories>
+
+    <repository>
+      <id>prime-repo</id>
+      <name>Prime Technology Maven Repository</name>
+      <url>http://repository.prime.com.tr</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>java.net</id>
+      <url>http://download.java.net/maven/2/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+  </repositories>
     
 </project>
