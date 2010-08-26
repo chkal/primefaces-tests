@@ -24,28 +24,94 @@
     </plugins>
   </build>
   
+  <profiles>
+  
+    <profile>
+      <id>myfaces</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.myfaces.core</groupId>
+          <artifactId>myfaces-api</artifactId>
+          <version>2.0.2-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.myfaces.core</groupId>
+          <artifactId>myfaces-impl</artifactId>
+          <version>2.0.2-SNAPSHOT</version>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>jsfri</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.sun.faces</groupId>
+          <artifactId>jsf-api</artifactId>
+          <version>2.0.2</version>
+        </dependency>
+        <dependency>
+          <groupId>com.sun.faces</groupId>
+          <artifactId>jsf-impl</artifactId>
+          <version>2.0.2</version>
+        </dependency>
+      </dependencies>
+    </profile>
+      
+  </profiles>
+  
   <!-- Dependencies -->
   <dependencies>
-  
-    <!-- JSF 2.0  -->
-    <dependency>
-      <groupId>org.apache.myfaces.core</groupId>
-      <artifactId>myfaces-api</artifactId>
-      <version>2.0.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.myfaces.core</groupId>
-      <artifactId>myfaces-impl</artifactId>
-      <version>2.0.1</version>
-    </dependency>
     
     <dependency>
       <groupId>org.primefaces</groupId>
       <artifactId>primefaces</artifactId>
-<!--      <version>2.1</version>-->
-      <version>2.2.RC1-SNAPSHOT</version>
-    </dependency>    
+      <version>2.1</version>
+    </dependency>
+        
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+        
+    <dependency>
+    	<groupId>commons-io</groupId>
+    	<artifactId>commons-io</artifactId>
+    	<version>1.4</version>
+    </dependency>
     
   </dependencies>
+
+  <repositories>
+
+    <repository>
+      <id>apache-snapshots</id>
+      <name>Apache Snapshots</name>
+      <url>http://people.apache.org/repo/m2-snapshot-repository/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>prime-repo</id>
+      <name>Prime Technology Maven Repository</name>
+      <url>http://repository.prime.com.tr</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+  </repositories>
     
 </project>

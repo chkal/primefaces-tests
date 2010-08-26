@@ -12,20 +12,9 @@
   <h:body>
   
     <h:form id="myForm">
+    
+      <p:fileUpload fileUploadListener="#{uploadBean.onUpload}" auto="true"/>
   
-      <h:panelGroup id="updateMe">
-      
-        <p:pickList value="#{pickListBean.model}" var="item" itemLabel="#{item}" itemValue="#{item}"/>
-        
-        <br/>
-        
-        #{pickListBean.currentDate}
-      
-      </h:panelGroup>
-      
-      <br/>
-        
-      <p:commandButton value="press me" update="updateMe" onerror="alert(status);" />
 
     </h:form>
   
