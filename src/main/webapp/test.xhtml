@@ -12,20 +12,19 @@
   <h:body>
   
     <h:form id="myForm">
-  
-      <h:panelGroup id="updateMe">
+
+      <p:dataTable id="table" var="entry" value="#{dataListBean.data}">
       
-        <p:pickList value="#{pickListBean.model}" var="item" itemLabel="#{item}" itemValue="#{item}"/>
-        
-        <br/>
-        
-        #{pickListBean.currentDate}
+        <p:column>
+          <f:facet name="header">Header</f:facet>
+          <h:outputText value="#{entry.name}"/>
+        </p:column>
       
-      </h:panelGroup>
-      
-      <br/>
-        
-      <p:commandButton value="press me" update="updateMe" onerror="alert(status);" />
+      </p:dataTable>
+
+      <h:commandLink value="Export">
+        <p:dataExporter type="xls" target="table" fileName="books" />
+      </h:commandLink>
 
     </h:form>
   
